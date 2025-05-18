@@ -41,109 +41,123 @@
   <script src="./static/js/index.js"></script>
   
 <style>
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .data-table thead tr {
-    background-color: #3273dc;
-    color: #ffffff;
-    text-align: left;
-  }
-  
-  .data-table th,
-  .data-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  .data-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-  }
-  
-  .data-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-  
-  .data-table tbody tr:last-of-type {
-    border-bottom: 2px solid #3273dc;
-  }
-  
-  .data-table tbody tr.active-row {
-    font-weight: bold;
-    color: #3273dc;
-    background-color: #f0f8ff;
-  }
-  
-  .sort-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    margin-left: 5px;
-    cursor: pointer;
-    color: white;
-  }
-  
-  .expand-btn {
-    background-color: #3273dc;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 6px 12px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .expand-btn:hover {
-    background-color: #276cda;
-  }
-  
-  .row-details {
-    display: none;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-  }
-  
-  .row-details.visible {
-    display: table-row;
-  }
-  
-  .filter-controls {
-    margin-bottom: 20px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .filter-btn {
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 8px 15px;
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  
-  .filter-btn:hover, .filter-btn.active {
-    background-color: #3273dc;
-    color: white;
-  }
-  
-  .search-box {
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-left: auto;
-    width: 200px;
-  }
-</style>
+      .data-table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        overflow: hidden; /* Ensures border-radius is applied to corners */
+      }
+      
+      .data-table thead tr {
+        background-color: #3273dc; /* Bulma primary color */
+        color: #ffffff;
+        text-align: left;
+      }
+      
+      .data-table th,
+      .data-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #dddddd; /* Lighter border for rows */
+      }
+      
+      .data-table tbody tr {
+        border-bottom: 1px solid #dddddd;
+      }
+      
+      .data-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3; /* Zebra striping */
+      }
+      
+      .data-table tbody tr:last-of-type {
+        border-bottom: 2px solid #3273dc; /* Thicker border for the last row */
+      }
+      
+      .data-table tbody tr.active-row { /* Example style, not used in current JS */
+        font-weight: bold;
+        color: #3273dc;
+        background-color: #f0f8ff; /* Light blue for active row */
+      }
+      
+      .sort-btn { /* Style for sort buttons if added later */
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: 5px;
+        cursor: pointer;
+        color: white; /* Assuming it's in the header */
+      }
+      
+      .expand-btn {
+        background-color: #3273dc;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 6px 12px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .expand-btn:hover {
+        background-color: #276cda; /* Darker shade on hover */
+      }
+      
+      .row-details {
+        display: none; /* Hidden by default */
+      }
+
+      .row-details.visible { /* Use 'visible' to show details */
+        display: table-row;
+      }
+
+      .row-details td { /* Style for the cell containing details */
+        padding: 15px;
+        background-color: #f9f9f9; /* Slightly different background for details */
+        border-top: 1px solid #ddd;
+      }
+
+      .row-details h3 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .row-details p {
+        margin: 5px 0;
+        line-height: 1.6;
+      }
+      
+      /* Styles for filter controls (not yet implemented in HTML structure) */
+      .filter-controls {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      
+      .filter-btn {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px 15px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      
+      .filter-btn:hover, .filter-btn.active {
+        background-color: #3273dc;
+        color: white;
+      }
+      
+      .search-box { /* Style for a search box if added later */
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-left: auto; /* Pushes search box to the right if in a flex container */
+        width: 200px;
+      }
+    </style>
 </head>
 <body>
 
@@ -380,7 +394,6 @@
               <th>Image Turn 0 <button class="sort-btn" data-sort="img0">↕</button></th>
               <th>Text Turn 10 <button class="sort-btn" data-sort="text10">↕</button></th>
               <th>Image Turn 10 <button class="sort-btn" data-sort="img10">↕</button></th>
-              <th>Details</th>
             </tr>
           </thead>
           <tbody>
