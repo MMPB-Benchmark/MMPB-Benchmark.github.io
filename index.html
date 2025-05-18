@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MMPB: It's Time for Multi-Modal Personalization</title>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -42,9 +41,9 @@
   
 <style>
       .data-table {
-        width: 90%;
+        width: 85%; /* Adjusted from 90% */
         border-collapse: collapse;
-        margin: 25px 0;
+        margin: 25px auto; /* Centered table if width is less than 100% */
         font-size: 0.9em;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         border-radius: 5px;
@@ -59,7 +58,7 @@
       
       .data-table th,
       .data-table td {
-        padding: 12px 15px;
+        padding: 8px 10px; /* Adjusted from 12px 15px */
         border-bottom: 1px solid #dddddd; /* Lighter border for rows */
       }
       
@@ -90,7 +89,7 @@
         color: white; /* Assuming it's in the header */
       }
       
-      .expand-btn {
+      .expand-btn { /* This style is kept for general use, though not in the interactive table */
         background-color: #3273dc;
         color: white;
         border: none;
@@ -111,6 +110,7 @@
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
+        justify-content: center; /* Center filter buttons */
       }
       
       .filter-btn {
@@ -131,7 +131,7 @@
         padding: 8px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        margin-left: auto; /* Pushes search box to the right if in a flex container */
+        /* margin-left: auto; Removed to allow centering with other controls */
         width: 200px;
       }
     </style>
@@ -146,34 +146,7 @@
       <span aria-hidden="true"></span>
     </a>
   </div>
-<!--   <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
- -->
-<!--       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div> -->
-    </div>
+</div>
 
   </div>
 </nav>
@@ -196,36 +169,6 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-<!--               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Video Link. -->
-<!--               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> --> 
-              <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/MMPB-Benchmark"
                    class="external-link button is-normal is-rounded is-dark">
@@ -235,7 +178,6 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
               </span>
               <span class="link-block">
                 <a href="https://huggingface.co/datasets/stackadd/MMPB" target="_blank"
@@ -247,6 +189,7 @@
                 </a>
               </span>
 
+            </div>
           </div>
         </div>
       </div>
@@ -267,7 +210,7 @@
         <tr>
           <td>
             <div style="height: 150px; overflow: auto;">
-              <ul> 
+              <ul>  
               <div style="white-space: nowrap;">
                 [2025.05.14] 🚀 Huggingface Dataset and evaluation code are available!
               </div>
@@ -284,7 +227,6 @@
   
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -298,7 +240,7 @@
             
           </p>
           <p>
-             Our findings indicate that most VLMs (including some closed-source models) struggle with personalization, particularly in maintaining consistency over dialogue, handling user preferences, and adapting to visual cues. Our analysis reveals that the challenges in VLM personalization (such as refusal behaviors and long-context forgetting) highlight substantial room for improvement. 
+            Our findings indicate that most VLMs (including some closed-source models) struggle with personalization, particularly in maintaining consistency over dialogue, handling user preferences, and adapting to visual cues. Our analysis reveals that the challenges in VLM personalization (such as refusal behaviors and long-context forgetting) highlight substantial room for improvement. 
           </p>
         </div>
       </div>
@@ -319,10 +261,10 @@
           We highlight the lack of VQA benchmarks for effectively and extensively evaluating VLMs.
           <centering>
             <div style="text-align: center;">
-              <img id="teaser" width="60%" src="images/mot_fig-1.png">     
+              <img id="teaser" width="60%" src="images/mot_fig-1.png">      
             </div>
           </centering>
-          <br />(a) Some closed-source models exhibit evasive responses. 
+          <br />(a) Some closed-source models exhibit evasive responses.  
           <br />(b) Most VLMs fails to be personalized.
         </div>
       </div>
@@ -339,7 +281,7 @@
 
           <centering>
             <div style="text-align: center;">
-              <img id="teaser" width="60%" src="images/main0515-1.png">     
+              <img id="teaser" width="60%" src="images/main0515-1.png">      
             </div>
           </centering>
           
@@ -606,121 +548,121 @@
 </section>
 
 <script>
-
-  document.querySelectorAll('.expand-btn').forEach(button => {
+  // Script for sort buttons
+  document.querySelectorAll('#interactive-table .sort-btn').forEach(button => {
     button.addEventListener('click', () => {
-      const rowId = button.getAttribute('data-row');
-      const detailsRow = document.getElementById(`details-${rowId}`);
-      
-      if (detailsRow.classList.contains('visible')) {
-        detailsRow.classList.remove('visible');
-        button.textContent = 'View Details';
-      } else {
-
-        document.querySelectorAll('.row-details.visible').forEach(row => {
-          row.classList.remove('visible');
-          const rowButton = document.querySelector(`[data-row="${row.id.split('-')[1]}"]`);
-          if (rowButton) rowButton.textContent = 'View Details';
-        });
-        
-        detailsRow.classList.add('visible');
-        button.textContent = 'Hide Details';
-      }
-    });
-  });
-
-  document.querySelectorAll('.sort-btn').forEach(button => {
-    button.addEventListener('click', () => {
+      const table = button.closest('.data-table');
+      const tbody = table.querySelector('tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr')); // Get all rows, not excluding any
       const sortType = button.getAttribute('data-sort');
-      const tbody = document.querySelector('.data-table tbody');
-      const rows = Array.from(tbody.querySelectorAll('tr:not(.row-details)'));
+      let sortDirection = button.getAttribute('data-sort-direction') || 'desc'; // Default to desc
+
+      // Toggle sort direction
+      if (button.getAttribute('data-sort-active') === sortType) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortDirection = 'desc'; // Default to desc for a new column
+      }
+      button.setAttribute('data-sort-direction', sortDirection);
       
+      // Reset active sort for other buttons
+      document.querySelectorAll('#interactive-table .sort-btn').forEach(btn => {
+        btn.removeAttribute('data-sort-active');
+        // Optionally reset visual indicator like arrow direction here
+      });
+      button.setAttribute('data-sort-active', sortType);
+
+
       rows.sort((a, b) => {
         let aValue, bValue;
+        let columnIndex;
+
+        switch (sortType) {
+          case 'name': 
+            columnIndex = 0;
+            aValue = a.cells[columnIndex].textContent.trim().toLowerCase();
+            bValue = b.cells[columnIndex].textContent.trim().toLowerCase();
+            if (sortDirection === 'asc') {
+                return aValue.localeCompare(bValue);
+            } else {
+                return bValue.localeCompare(aValue);
+            }
+          case 'text0': columnIndex = 1; break;
+          case 'img0': columnIndex = 2; break;
+          case 'text10': columnIndex = 3; break;
+          case 'img10': columnIndex = 4; break;
+          default: columnIndex = 0; // Should not happen
+        }
         
-        if (sortType === 'name') {
-          aValue = a.cells[0].textContent;
-          bValue = b.cells[0].textContent;
-          return aValue.localeCompare(bValue);
+        // For numeric columns
+        aValue = parseFloat(a.cells[columnIndex].textContent);
+        bValue = parseFloat(b.cells[columnIndex].textContent);
+
+        if (sortDirection === 'asc') {
+            return aValue - bValue;
         } else {
-
-          let columnIndex;
-          switch (sortType) {
-            case 'text0': columnIndex = 1; break;
-            case 'img0': columnIndex = 2; break;
-            case 'text10': columnIndex = 3; break;
-            case 'img10': columnIndex = 4; break;
-            default: columnIndex = 0;
-          }
-          
-          aValue = parseFloat(a.cells[columnIndex].textContent);
-          bValue = parseFloat(b.cells[columnIndex].textContent);
-          return bValue - aValue; 
+            return bValue - aValue;
         }
       });
 
-      const sortedRows = document.createDocumentFragment();
+      tbody.innerHTML = ''; // Clear existing content
       rows.forEach(row => {
-        sortedRows.appendChild(row);
-        const rowId = row.querySelector('.expand-btn').getAttribute('data-row');
-        const detailsRow = document.getElementById(`details-${rowId}`);
-        if (detailsRow) {
-          sortedRows.appendChild(detailsRow);
-        }
+        tbody.appendChild(row); // Append sorted rows
       });
-      
-      tbody.innerHTML = '';
-      tbody.appendChild(sortedRows);
     });
   });
   
-  document.querySelectorAll('.filter-btn').forEach(button => {
+  // Script for filter buttons
+  document.querySelectorAll('#interactive-table .filter-btn').forEach(button => {
     button.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(btn => {
+      document.querySelectorAll('#interactive-table .filter-btn').forEach(btn => {
         btn.classList.remove('active');
       });
       button.classList.add('active');
       
       const filter = button.getAttribute('data-filter');
-      const rows = document.querySelectorAll('.data-table tbody tr:not(.row-details)');
+      const interactiveTable = document.getElementById('interactive-table');
+      const rows = interactiveTable.querySelectorAll('.data-table tbody tr');
+      const searchBox = interactiveTable.querySelector('.search-box');
+      const searchTerm = searchBox.value.toLowerCase();
       
       rows.forEach(row => {
         const category = row.getAttribute('data-category');
-        const detailsId = row.querySelector('.expand-btn').getAttribute('data-row');
-        const detailsRow = document.getElementById(`details-${detailsId}`);
+        const modelName = row.cells[0].textContent.toLowerCase();
         
-        if (filter === 'all' || (category && category.includes(filter))) {
+        const matchesFilter = (filter === 'all' || (category && category.includes(filter)));
+        const matchesSearch = modelName.includes(searchTerm);
+
+        if (matchesFilter && matchesSearch) {
           row.style.display = '';
-          if (detailsRow.classList.contains('visible')) {
-            detailsRow.style.display = '';
-          }
         } else {
           row.style.display = 'none';
-          detailsRow.style.display = 'none';
         }
       });
     });
   });
   
 
-  const searchBox = document.querySelector('.search-box');
+  // Script for search box
+  const searchBox = document.querySelector('#interactive-table .search-box');
   searchBox.addEventListener('input', () => {
     const searchTerm = searchBox.value.toLowerCase();
-    const rows = document.querySelectorAll('.data-table tbody tr:not(.row-details)');
+    const interactiveTable = document.getElementById('interactive-table');
+    const rows = interactiveTable.querySelectorAll('.data-table tbody tr');
+    const activeFilterButton = interactiveTable.querySelector('.filter-btn.active');
+    const currentFilter = activeFilterButton ? activeFilterButton.getAttribute('data-filter') : 'all';
     
     rows.forEach(row => {
       const modelName = row.cells[0].textContent.toLowerCase();
-      const detailsId = row.querySelector('.expand-btn').getAttribute('data-row');
-      const detailsRow = document.getElementById(`details-${detailsId}`);
-      
-      if (modelName.includes(searchTerm)) {
+      const category = row.getAttribute('data-category');
+
+      const matchesSearch = modelName.includes(searchTerm);
+      const matchesFilter = (currentFilter === 'all' || (category && category.includes(currentFilter)));
+
+      if (matchesSearch && matchesFilter) {
         row.style.display = '';
-        if (detailsRow.classList.contains('visible')) {
-          detailsRow.style.display = '';
-        }
       } else {
         row.style.display = 'none';
-        detailsRow.style.display = 'none';
       }
     });
   });
@@ -729,11 +671,7 @@
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-<!--       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a> -->
-      <a class="icon-link" href="https://github.com/MMPB-Benchmark" class="external-link" disabled>
+<a class="icon-link" href="https://github.com/MMPB-Benchmark" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
@@ -742,7 +680,7 @@
         <div class="content">
           <p>
             This website is adapted from <a href="https://mathvista.github.io/">MathVista</a> and <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-          Commons Attribution-ShareAlike 4.0 International License</a>.
+            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
         </div>
       </div>
